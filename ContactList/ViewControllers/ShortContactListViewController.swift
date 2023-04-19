@@ -7,20 +7,18 @@
 
 import UIKit
 
-
 final class ShortContactListViewController: UITableViewController {
 
     private var personList = Person.getPerson()
-    unowned var delegate: ShortContactListViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(personList)
         
-        
+       
    
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         personList.count
@@ -32,8 +30,7 @@ final class ShortContactListViewController: UITableViewController {
         let person = personList[indexPath.row]
         content.text = person.title
         cell.contentConfiguration = content
-        
-        
+ 
         return cell
     }
 
@@ -49,3 +46,4 @@ final class ShortContactListViewController: UITableViewController {
     
 
 }
+

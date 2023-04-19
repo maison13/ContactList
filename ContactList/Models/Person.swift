@@ -15,67 +15,30 @@ struct Person {
         "\(name) \(surName)"
     }
     static func getPerson() -> [Person] {
-        [
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
-            ),
-            Person(
-                name: DataStore().names.randomElement() ?? "",
-                surName: DataStore().surNames.randomElement() ?? "",
-                phoneNumber: DataStore().phoneNumbers.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? ""
+        var uniquePersons: [Person] = []
+        
+        for index in 0..<DataStore().names.count {
+            
+            let person = Person(
+                name: DataStore().names[index],
+                surName: DataStore().surNames[index],
+                phoneNumber: DataStore().phoneNumbers[index],
+                email: DataStore().emails[index]
             )
-        ]
+            
+            if !uniquePersons.contains(person) {
+                uniquePersons.append(person)
+            }
+        }
+        return uniquePersons
+    }
+}
+
+extension Person: Equatable {
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        return lhs.name == rhs.name &&
+               lhs.surName == rhs.surName &&
+               lhs.phoneNumber == rhs.phoneNumber &&
+               lhs.email == rhs.email
     }
 }
