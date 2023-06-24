@@ -7,22 +7,19 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
-    var personList = Person.getPerson()
+final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(personList)
-        // Do any additional setup after loading the view.
+        setupViewControllers()
+    }
+    private func setupViewControllers() {
+        guard let contactListVC = viewControllers?.first as? ShortContactListViewController else { return }
+        guard let fullContactVC = viewControllers?.last as? FullContactListViewController else { return }
+        
+        let personList = Person.getPerson()
+        contactListVC.personList = personList
+        fullContactVC.personList = personList
     }
     
-
-/*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let viewControllers = tabBarController?.viewControllers else { return }
-        
-        
-    }
-*/
 }

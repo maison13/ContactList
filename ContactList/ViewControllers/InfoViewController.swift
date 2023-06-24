@@ -16,9 +16,11 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = person.fullName
         phoneLabel.text = person.phoneNumber
         emailLabel.text = person.email
-        navigationItem.title = person.title
+        
        
     }
     

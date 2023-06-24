@@ -11,34 +11,39 @@ struct Person {
     let phoneNumber: String
     let email: String
     
-    var title: String {
+    var fullName: String {
         "\(name) \(surName)"
     }
     static func getPerson() -> [Person] {
         var uniquePersons: [Person] = []
         
-        for index in 0..<DataStore().names.count {
-            
+        let names = DataStore.shared.names.shuffled()
+        let surnames = DataStore.shared.surNames.shuffled()
+        let emails = DataStore.shared.emails.shuffled()
+        let phoneNumbers = DataStore.shared.phoneNumbers.shuffled()
+        
+        let iterationCount = min(
+            names.count,
+            surnames.count,
+            emails.count,
+            phoneNumbers.count
+        )
+        
+        for index in 0..<iterationCount {
             let person = Person(
-                name: DataStore().names[index],
-                surName: DataStore().surNames[index],
-                phoneNumber: DataStore().phoneNumbers[index],
-                email: DataStore().emails[index]
+                name: names[index],
+                surName: surnames[index],
+                phoneNumber: phoneNumbers[index],
+                email: emails[index]
             )
-            
-            if !uniquePersons.contains(person) {
-                uniquePersons.append(person)
-            }
+            uniquePersons.append(person)
         }
+        
         return uniquePersons
     }
 }
 
-extension Person: Equatable {
-    static func == (lhs: Person, rhs: Person) -> Bool {
-        return lhs.name == rhs.name &&
-               lhs.surName == rhs.surName &&
-               lhs.phoneNumber == rhs.phoneNumber &&
-               lhs.email == rhs.email
-    }
+enum Contacts: String {
+    case phone = "phone"
+    case email = "tray"
 }
