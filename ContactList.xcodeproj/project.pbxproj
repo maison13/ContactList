@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		875404F129F0AA8C00C96EBC /* FullContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875404F029F0AA8C00C96EBC /* FullContactListViewController.swift */; };
+		875404F329F0AB5400C96EBC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875404F229F0AB5400C96EBC /* TabBarViewController.swift */; };
 		87FFB7CF29F04A4600B30E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFB7CE29F04A4600B30E5A /* AppDelegate.swift */; };
 		87FFB7D129F04A4600B30E5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFB7D029F04A4600B30E5A /* SceneDelegate.swift */; };
 		87FFB7D629F04A4600B30E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FFB7D429F04A4600B30E5A /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		875404F029F0AA8C00C96EBC /* FullContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullContactListViewController.swift; sourceTree = "<group>"; };
+		875404F229F0AB5400C96EBC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		87FFB7CB29F04A4600B30E5A /* ContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FFB7CE29F04A4600B30E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FFB7D029F04A4600B30E5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			children = (
 				87FFB7EB29F05A1C00B30E5A /* ShortContactListViewController.swift */,
 				87FFB7ED29F06B1200B30E5A /* InfoViewController.swift */,
+				875404F029F0AA8C00C96EBC /* FullContactListViewController.swift */,
+				875404F229F0AB5400C96EBC /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,9 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875404F329F0AB5400C96EBC /* TabBarViewController.swift in Sources */,
 				87FFB7E829F04B5500B30E5A /* DataStore.swift in Sources */,
 				87FFB7EC29F05A1C00B30E5A /* ShortContactListViewController.swift in Sources */,
 				87FFB7EA29F04B6600B30E5A /* Person.swift in Sources */,
+				875404F129F0AA8C00C96EBC /* FullContactListViewController.swift in Sources */,
 				87FFB7CF29F04A4600B30E5A /* AppDelegate.swift in Sources */,
 				87FFB7EE29F06B1200B30E5A /* InfoViewController.swift in Sources */,
 				87FFB7D129F04A4600B30E5A /* SceneDelegate.swift in Sources */,

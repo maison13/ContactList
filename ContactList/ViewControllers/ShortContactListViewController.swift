@@ -9,14 +9,15 @@ import UIKit
 
 final class ShortContactListViewController: UITableViewController {
 
-    private var personList = Person.getPerson()
+    var personList: [Person] {
+        guard let tabBarController = tabBarController as? TabBarViewController else { return []	 }
+        return tabBarController.personList	
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(personList)
         
-       
-   
+
     }
     
     // MARK: - Table view data source
